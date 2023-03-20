@@ -1,19 +1,11 @@
 pipeline {
-    agent {
-        label 'jenkins'
-    }
-    triggers {
-        pollSCM ('* * * * *')
-    }
+    agent { label 'jenkins' }
+    triggers { pollSCM ('* * * * *') }
     parameters {
-        choice (
-            name: 'MAVEN_MAIN',
-            choices: ['install', 'package', 'clen'],
-            description: 'maven main'
-        )
+        choice(name: 'MAVEN_GOAL', choices: ['package', 'install', 'clean'], description: 'Maven Goal')
     }
     stages {
-        stage('version control system') {
+        stage('vcs') {
             steps {
                 git url: 'https://github.com/qtrajkumarmarch23/spring-petclinic.git',
                     branch: 'develop'
@@ -48,7 +40,7 @@ pipeline {
             }
             steps {
                 rtMavenRun (
-                    tool: 'MAVEN_DEFAULT',
+                    tool: 'MAVEN_CLOUD',
                     pom: 'pom.xml',
                     goals: 'clean install',
                     deployerId: "MAVEN_DEPLOYER"
@@ -60,11 +52,11 @@ pipeline {
                 //sh "mvn ${params.MAVEN_GOAL}"
             }
         }
-        stage('package') {
+        stage('post build') {
             steps {
                 archiveArtifacts artifacts: '**/target/spring-petclinic-3.0.0-SNAPSHOT.jar',
-                                   onlyIfSuccessful: true
-                junit testResults: '**/surefire-reports/TEST-*.xml'                   
+                                 onlyIfSuccessful: true
+                junit testResults: '**/surefire-reports/TEST-*.xml'
             }
         }
     }
