@@ -89,6 +89,9 @@ ls ~/.ssh
 ![preview](Images/jenkins30.png)
 ![preview](Images/jenkins31.png)
 ![preview](Images/jenkins32.png)
+* [refer here](https://github.com/qtrajkumarmarch23/spring-petclinic/commit/c8b92925fa78966ea6e4a74f3ac259c641d078ef) for the changes done in jenkinsfile to call the parameters as a variables
+* 
+
 ![preview](Images/jenkins3.png)
 ![preview]
 ![preview]

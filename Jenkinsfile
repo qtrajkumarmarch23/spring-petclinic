@@ -19,9 +19,45 @@ pipeline {
                     branch: 'develop'
             }
         }
-        stage('build') {
+        stage ('Artifactory configuration') {
             steps {
-                sh "mvn ${params.MAVEN_MAIN}"
+                rtServer (
+                    id: "ARTIFACTORY_SERVER",
+                    url: 'https://jfrogforjenkins.jfrog.io/artifactory',
+                    credentialsId: 'JFROG_CLOUD'
+                )
+
+                rtMavenDeployer (
+                    id: "MAVEN_DEPLOYER",
+                    serverId: "ARTIFACTORY_SERVER",
+                    releaseRepo: 'libs-release',
+                    snapshotRepo: 'libs-snapshot'
+                )
+
+                rtMavenResolver (
+                    id: "MAVEN_RESOLVER",
+                    serverId: "ARTIFACTORY_SERVER",
+                    releaseRepo: 'libs-release',
+                    snapshotRepo: 'libs-snapshot'
+                )
+            }
+        }
+        stage('package') {
+            tools {
+                jdk 'JDK_17'
+            }
+            steps {
+                rtMavenRun (
+                    tool: 'MAVEN_DEFAULT',
+                    pom: 'pom.xml',
+                    goals: 'clean install',
+                    deployerId: "MAVEN_DEPLOYER"
+                    
+                )
+                rtPublishBuildInfo (
+                    serverId: "ARTIFACTORY_SERVER"
+                )
+                //sh "mvn ${params.MAVEN_GOAL}"
             }
         }
         stage('package') {
