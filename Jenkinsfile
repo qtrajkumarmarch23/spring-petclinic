@@ -8,7 +8,7 @@ pipeline {
     parameters {
         choice (
             name: 'MAVEN_MAIN',
-            choices: ['install', 'package', 'clen']
+            choices: ['install', 'package', 'clen'],
             description: 'maven-main'
         )
     }
