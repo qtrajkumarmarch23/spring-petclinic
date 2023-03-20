@@ -88,8 +88,8 @@ ls ~/.ssh
 [refer here](https://github.com/qtrajkumarmarch23/spring-petclinic/commit/759cd49a1134904840abae22bffd40c425f154ef) for the basic jenkinsfile.
 ![preview](Images/jenkins30.png)
 ![preview](Images/jenkins31.png)
-![preview](Images/jenkins22.png)
-![preview](Images/jenkins22.png)
+![preview](Images/jenkins32.png)
+![preview](Images/jenkins3.png)
 ![preview]
 ![preview]
 ![preview]

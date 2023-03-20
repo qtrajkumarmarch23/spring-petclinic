@@ -9,7 +9,7 @@ pipeline {
         choice (
             name: 'MAVEN_MAIN',
             choices: ['install', 'package', 'clen'],
-            description: 'maven-main'
+            description: 'maven main'
         )
     }
     stages {
@@ -21,7 +21,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'mvn ${params.MAVEN_MAIN}'
+                sh "mvn ${params.MAVEN_MAIN}"
             }
         }
         stage('package') {
