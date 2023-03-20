@@ -80,11 +80,14 @@ su jenkins
 ssh -i /tmp/jenkins.pem ubuntu@172.31.0.228(private add of jenkins node)
 exit
 ls ~/.ssh
+```
 ![preview](Images/jenkins27.png)
 ![preview](Images/jenkins28.png)
 ![preview](Images/jenkins29.png)
-![preview](Images/jenkins.png)
-![preview](Images/jenkins22.png)
+* Start the spring petclinic jenkinsfile for basic steps
+[refer here](https://github.com/qtrajkumarmarch23/spring-petclinic/commit/759cd49a1134904840abae22bffd40c425f154ef) for the basic jenkinsfile.
+![preview](Images/jenkins30.png)
+![preview](Images/jenkins31.png)
 ![preview](Images/jenkins22.png)
 ![preview](Images/jenkins22.png)
 ![preview]

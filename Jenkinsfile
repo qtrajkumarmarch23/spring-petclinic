@@ -9,7 +9,7 @@ pipeline {
         choice (
             name: 'MAVEN_MAIN',
             choices: ['install', 'package', 'clen']
-            description: 'maven-purpose'
+            description: 'maven-main'
         )
     }
     stages {
