@@ -90,10 +90,22 @@ ls ~/.ssh
 ![preview](Images/jenkins31.png)
 ![preview](Images/jenkins32.png)
 * [refer here](https://github.com/qtrajkumarmarch23/spring-petclinic/commit/c8b92925fa78966ea6e4a74f3ac259c641d078ef) for the changes done in jenkinsfile to call the parameters as a variables
-* 
-
-![preview](Images/jenkins3.png)
-![preview]
+* To configure the jfrog we need to install the required plugins 
+* For that firstly install jfrog plugin
+![preview](Images/jenkins33.png)
+![preview](Images/jenkins34.png)
+![preview](Images/jenkins35.png)
+![preview](Images/jenkins36.png)
+![preview](Images/jenkins37.png)
+![preview](Images/jenkins38.png)
+* [refer here](https://github.com/qtrajkumarmarch23/spring-petclinic/commit/53e410513a215d2d1f89db565e41dde0ba3a2c4c) for the jenkinsfile for jfrog.
+![preview](Images/jenkins39.png)
+![preview](Images/jenkins40.png)
+* This build was failed because of the maven plugin issues has been arrived, so that's why it is not working.
+* After we need to configure the sonarqube
+![preview](Images/jenkins4.png)
+![preview](Images/jenkins33.png)
+![preview](Images/jenkins33.png)
 ![preview]
 ![preview]
 ![preview]
