@@ -103,9 +103,10 @@ ls ~/.ssh
 ![preview](Images/jenkins40.png)
 * This build was failed because of the maven plugin issues has been arrived, so that's why it is not working.
 * After we need to configure the sonarqube
-![preview](Images/jenkins4.png)
-![preview](Images/jenkins33.png)
-![preview](Images/jenkins33.png)
+* [refer here](https://github.com/qtrajkumarmarch23/spring-petclinic/commit/ac9265e530968dd6b57f9892f4ad10ed6cccde62) for the jenkinsfile of sonarqube
+![preview](Images/jenkins42.png)
+![preview](Images/jenkins41.png)
+![preview](Images/jenkins43.png)
 ![preview]
 ![preview]
 ![preview]
